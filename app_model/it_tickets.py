@@ -1,3 +1,4 @@
+import pandas as pd
 def migrate_it_tickets(connection):
     data = pd.read_csv('DATA/it_tickets.csv')
     data.to_sql('it_tickets', connection)
