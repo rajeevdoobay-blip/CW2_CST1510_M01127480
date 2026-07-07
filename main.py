@@ -1,23 +1,12 @@
-import bcrypt
+
 import sqlite3 
 import pandas as pd
 
 from app_model.db import connection
 from app_model.users import add_user, get_user
+from hashing import generate_hash, is_valid_hash
 
-# hash password using bcrypt
-def generate_hash(pwd):
-    byte_pwd = pwd.encode('utf-8')
-    salt = bcrypt.gensalt()
-    hash = bcrypt.hashpw(byte_pwd, salt)
-    return hash.decode('utf-8')
 
-# validating the hash vs password 
-def is_valid_hash(pwd, hash):
-    hash_ =  hash.encode('utf-8')
-    byte_pwd = pwd.encode('utf-8')
-    is_valid = bcrypt.checkpw(byte_pwd, hash_)
-    return is_valid 
 
 # user registration
 def user_registration(connection):
