@@ -4,8 +4,8 @@ from app_model.cyber_incidents import get_all_cyber_incidents
 from app_model.db import get_connection
 
 st.set_page_config(
-    page_title="Home",
-    page_icon="🏠",
+    page_title="Cyber Incidents",
+    page_icon="🛡️",
     layout="wide")
 
 if 'logged_in' not in st.session_state:
@@ -52,5 +52,5 @@ with col2:
 
 
 
-st.subheader("Filtered Data")
+st.subheader("Filtered Data:")
 st.dataframe(filtered_data)

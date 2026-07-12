@@ -29,7 +29,7 @@ with tab_login:
        if login_username == user_name and is_valid_hash(login_password, user_hash):
             st.session_state['logged_in'] = True
             st.success("Logged in successfully!")
-            st.switch_page("pages/1_Dashboard.py")
+            st.switch_page("pages/Cyber_Incidents.py")
        st.session_state['logged_in'] = False
     
        
